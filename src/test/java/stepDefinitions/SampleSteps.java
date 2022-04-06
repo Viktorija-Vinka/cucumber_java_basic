@@ -128,10 +128,8 @@ public class SampleSteps {
 
     @Then("I am not navigated to age message page")
     public void iAmNotInAgeMesssagePage() throws Throwable {
-        assertFalse( driver.getCurrentUrl().contains("https://kristinek.github.io/site/examples/age_2.html"));
+        assertFalse(driver.getCurrentUrl().contains("https://kristinek.github.io/site/examples/age_2.html"));
     }
-
-
 
 
     @Given("^I (?:am on|open) feedback page$")
@@ -166,5 +164,7 @@ public class SampleSteps {
     public void iCanSeeAgeInFeedbackCheck(String age) throws Throwable {
         assertEquals(age, driver.findElement(By.id("age")).getText());
     }
+
+
 
 }
