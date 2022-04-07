@@ -177,4 +177,20 @@ public class SampleSteps {
         assertEquals(languages, driver.findElement(By.id("language")).getText());
     }
 
+    @When(("^I enter input in feedback page$"))
+    public void iEnterInputInFeedback(Map<String, String> feedbackInput) throws Throwable {
+        if(feedbackInput.containsKey("name")) {
+            iEnterNameInFeedback(feedbackInput.get("name"));
+        }
+        iEnterNameInFeedback(feedbackInput.get("age"));
+        driver.findElement(By.xpath("//input[@value='" + feedbackInput.get("genre") + "']")).click();
+
+    }
+
+
+    @Then("^I can see genre \"([^\"]*)\" in feedback check$")
+    public void iCanSeeGenreInFeedbackCheck(String gender) throws Throwable {
+        assertEquals(gender, driver.findElement(By.id("gender")).getText());
+    }
+
 }

@@ -31,3 +31,23 @@ Feature: Introduction to cucumber part 4
       | Ann  | 5   | Hello, Ann, you are a kid    |
       | Bob  | 61  | Hello, Bob, you are an adult |
 
+ # TODO - create Scenario for 'Give us your feedback!' page
+  # URL: https://kristinek.github.io/site/tasks/provide_feedback
+  # Navigate to page
+  # Set Name, Age and Genre
+  # - All input MUST be done in single step
+  # - All input MUST use Examples for data
+  # - Step can use Map or Domain object
+  # Click "Send" button and verify that previous input is displayed in correct fields
+
+  @focus
+  Scenario: Feedback with only languages
+    Given I am on feedback page
+    When I enter input in feedback page
+    | name | John |
+    | age  | 22   |
+    | genre| male |
+    And I click send feedback
+    Then I can see name "John" in feedback check
+    And I can see age "22" in feedback check
+    And I can see genre "male" in feedback check
