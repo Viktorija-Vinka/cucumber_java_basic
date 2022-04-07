@@ -21,7 +21,7 @@ Feature: Introduction to cucumber part 3
       | name | age | message                   |
       | Tom  | 15  | Hello, Tom, you are a kid |
 
-  @focus
+
   Scenario Outline: Feedback with name and age
     Given I am on feedback page
     When I enter name in feedback: "<name>"
